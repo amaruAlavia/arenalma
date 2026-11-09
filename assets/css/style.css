@@ -369,20 +369,20 @@ h1, h2, h3, h4, h5 {
 .brand-logo {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .brand-logo img {
-  width: 92px;
-  height: 92px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
   border-radius: 50%;
-  filter: drop-shadow(0 4px 16px rgba(229, 163, 181, 0.5));
+  filter: drop-shadow(0 3px 10px rgba(229, 163, 181, 0.35));
   transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .brand-logo:hover img {
-  transform: rotate(35deg) scale(1.08);
+  transform: rotate(35deg) scale(1.06);
 }
 
 .brand-info {
@@ -392,11 +392,11 @@ h1, h2, h3, h4, h5 {
 
 .brand-name {
   font-family: var(--font-serif);
-  font-size: 1.85rem;
+  font-size: 1.65rem;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   color: var(--text-dark);
-  line-height: 1.05;
+  line-height: 1;
 }
 
 .brand-name span {
@@ -405,9 +405,9 @@ h1, h2, h3, h4, h5 {
 
 .brand-tagline {
   font-family: var(--font-script);
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   color: var(--rose-deep);
-  line-height: 1.1;
+  line-height: 1;
   margin-top: 2px;
 }
 
@@ -1627,15 +1627,11 @@ h1, h2, h3, h4, h5 {
 }
 
 @media (max-width: 576px) {
-  .brand-logo img {
-    width: 64px;
-    height: 64px;
-  }
   .brand-name {
-    font-size: 1.45rem;
+    font-size: 1.35rem;
   }
   .brand-tagline {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
   }
   .hero-card-orb {
     width: 290px;
