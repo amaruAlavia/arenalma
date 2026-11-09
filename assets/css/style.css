@@ -695,8 +695,8 @@ h1, h2, h3, h4, h5 {
 
 .hero-card-orb {
   position: relative;
-  width: 460px;
-  height: 460px;
+  width: 320px;
+  height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -717,21 +717,21 @@ h1, h2, h3, h4, h5 {
 }
 
 .orb-ring-2 {
-  width: 86%;
-  height: 86%;
+  width: 82%;
+  height: 82%;
   border-color: rgba(229, 163, 181, 0.6);
-  box-shadow: 0 0 50px rgba(197, 159, 96, 0.35);
+  box-shadow: 0 0 35px rgba(197, 159, 96, 0.25);
 }
 
 .hero-logo-frame {
   position: relative;
   z-index: 3;
-  width: 335px;
-  height: 335px;
+  width: 210px;
+  height: 210px;
   border-radius: 50%;
   background: #FFFFFF;
   padding: 10px;
-  box-shadow: 0 0 65px rgba(244, 202, 214, 0.65), 0 0 30px rgba(197, 159, 96, 0.4);
+  box-shadow: 0 0 45px rgba(244, 202, 214, 0.5), 0 0 20px rgba(197, 159, 96, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1634,12 +1634,12 @@ h1, h2, h3, h4, h5 {
     font-size: 0.95rem;
   }
   .hero-card-orb {
-    width: 330px;
-    height: 330px;
+    width: 260px;
+    height: 260px;
   }
   .hero-logo-frame {
-    width: 235px;
-    height: 235px;
+    width: 170px;
+    height: 170px;
   }
   .floating-badge {
     display: none;
