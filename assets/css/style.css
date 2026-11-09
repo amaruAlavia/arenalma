@@ -1,0 +1,1666 @@
+/* ==========================================================================
+   ARENALMA - "Reconecta con tu esencia"
+   Paleta Inspirada en "Trabaja Tu Luz" (Rebecca Campbell & Danielle Noel)
+   Tonos: Rosa Cuarzo, Turquesa Celestial, Oro Sagrado & Lavanda Cósmico
+   Ubicación: La Serena & Coquimbo, Chile
+   ========================================================================== */
+
+:root {
+  /* --- PALETA "TRABAJA TU LUZ" --- */
+  /* 1. Rosa Cuarzo & Blush Templo */
+  --rose-primary: #E5A3B5;
+  --rose-light: #F4CAD6;
+  --rose-soft: #FCF2F5;
+  --rose-deep: #C46C83;
+  --rose-dark: #8F4558;
+
+  /* 2. Turquesa Celestial & Aqua de La Serena/Coquimbo */
+  --aqua-primary: #639FA9;
+  --aqua-light: #8DC4CF;
+  --aqua-soft: #D9EEF2;
+  --aqua-deep: #3C707A;
+  --aqua-dark: #234850;
+
+  /* 3. Oro Sagrado, Triángulo & Halo Solar */
+  --gold-sacred: #C59F60;
+  --gold-light: #E4C88E;
+  --gold-shimmer: #FBF0D3;
+  --gold-deep: #997537;
+  --gold-dark: #6E5122;
+
+  /* 4. Portal Cósmico & Noche Estelar */
+  --cosmic-lavender: #A898C3;
+  --cosmic-purple: #564375;
+  --cosmic-deep: #2A1E3C;
+  --cosmic-night: #181124;
+  --cosmic-border: rgba(168, 152, 195, 0.3);
+
+  /* 5. Mármol Opalescente & Seda Perlada (Fondos Claros) */
+  --bg-opalescent: #FAF6F8;
+  --bg-card: #FFFFFF;
+  --bg-soft-sand: #F5EDF1;
+  --text-dark: #2B2129;
+  --text-muted: #72606C;
+  --text-light: #FAF6F8;
+
+  /* --- DEGRADADOS MÁGICOS "TRABAJA TU LUZ" --- */
+  /* El degradado de aurora celestial (Rosa Cuarzo + Oro + Turquesa) */
+  --grad-aurora: linear-gradient(135deg, #F4CAD6 0%, #E5A3B5 35%, #C59F60 70%, #639FA9 100%);
+  --grad-gold: linear-gradient(135deg, #FBF0D3 0%, #E4C88E 30%, #C59F60 70%, #997537 100%);
+  --grad-aqua-rose: linear-gradient(135deg, #639FA9 0%, #8DC4CF 40%, #F4CAD6 80%, #E5A3B5 100%);
+  --grad-portal: radial-gradient(circle at 50% 35%, #4A3563 0%, #2A1E3C 55%, #181124 100%);
+  --grad-shimmer: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%);
+
+  /* Aliases para compatibilidad total con elementos de marca */
+  --rg-primary: var(--gold-sacred);
+  --rg-light: var(--gold-light);
+  --rg-lighter: var(--rose-light);
+  --rg-deep: var(--rose-deep);
+  --rg-dark: var(--gold-deep);
+  --rg-gradient: var(--grad-gold);
+
+  /* Tipografías */
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-script: 'Alex Brush', 'Great Vibes', cursive;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sombras y Resplandores */
+  --shadow-sm: 0 4px 18px rgba(99, 159, 169, 0.08);
+  --shadow-md: 0 10px 30px rgba(229, 163, 181, 0.18);
+  --shadow-glow: 0 0 25px rgba(197, 159, 96, 0.35);
+  --shadow-portal: 0 15px 45px rgba(24, 17, 36, 0.25);
+
+  /* Bordes & Transiciones */
+  --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+}
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-opalescent);
+  color: var(--text-dark);
+  line-height: 1.68;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Barra de Scroll Personalizada con Aura Oro y Turquesa */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-opalescent);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--rose-primary) 0%, var(--aqua-primary) 100%);
+  border-radius: 10px;
+  border: 2px solid var(--bg-opalescent);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-sacred);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  border: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   Tipografía & Títulos de Sección
+   ========================================================================== */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--text-dark);
+}
+
+.script-font {
+  font-family: var(--font-script);
+  font-weight: 400;
+}
+
+.text-gold {
+  color: var(--gold-sacred);
+}
+
+.gradient-text {
+  background: var(--grad-aurora);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 52px auto;
+  position: relative;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(99, 159, 169, 0.12);
+  border: 1px solid rgba(99, 159, 169, 0.35);
+  color: var(--aqua-deep);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.section-tag i {
+  font-size: 0.9rem;
+  color: var(--gold-sacred);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.8vw, 2.9rem);
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  color: var(--text-dark);
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.divider-mandala {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 18px auto 0 auto;
+  opacity: 0.85;
+}
+
+.divider-mandala span {
+  width: 55px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-sacred), transparent);
+}
+
+.divider-mandala i {
+  color: var(--gold-sacred);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Botones Personalizados de Arenalma (Estilo "Trabaja Tu Luz")
+   ========================================================================== */
+.btn-mystic {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: var(--radius-full);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Botón Oro Sagrado y Aurora */
+.btn-mystic-primary {
+  background: var(--grad-gold);
+  color: #2A1E3C;
+  box-shadow: 0 8px 24px rgba(197, 159, 96, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+}
+
+.btn-mystic-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--grad-shimmer);
+  transition: 0.6s ease;
+  z-index: -1;
+}
+
+.btn-mystic-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(197, 159, 96, 0.6);
+  color: #181124;
+}
+
+.btn-mystic-primary:hover::before {
+  left: 100%;
+}
+
+/* Botón Secundario con reflejo Turquesa & Rosa */
+.btn-mystic-outline {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+  border: 1.5px solid var(--aqua-primary);
+  backdrop-filter: blur(8px);
+}
+
+.btn-mystic-outline:hover {
+  background: var(--aqua-primary);
+  color: #FFFFFF;
+  border-color: var(--aqua-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(99, 159, 169, 0.35);
+}
+
+/* Botón Portal Cósmico / Noche Mística */
+.btn-mystic-dark {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border: 1.5px solid var(--rose-light);
+  backdrop-filter: blur(8px);
+}
+
+.btn-mystic-dark:hover {
+  background: var(--grad-aurora);
+  color: #2A1E3C;
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(229, 163, 181, 0.5);
+}
+
+/* Botón WhatsApp */
+.btn-whatsapp-direct {
+  background: #25D366;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+}
+.btn-whatsapp-direct:hover {
+  background: #20bd5a;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(37, 211, 102, 0.5);
+}
+
+
+
+/* ==========================================================================
+   Header & Navegación Principal
+   ========================================================================== */
+.main-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(250, 246, 248, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(197, 159, 96, 0.2);
+  z-index: 990;
+  transition: var(--transition);
+}
+
+.main-header.scrolled {
+  background: rgba(250, 246, 248, 0.98);
+  box-shadow: 0 6px 22px rgba(42, 30, 60, 0.08);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+/* Logo con Mandala y Resplandor Sagrado */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-logo img {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 4px 14px rgba(229, 163, 181, 0.45));
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.brand-logo:hover img {
+  transform: rotate(35deg) scale(1.08);
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text-dark);
+  line-height: 1.05;
+}
+
+.brand-name span {
+  color: var(--aqua-deep);
+}
+
+.brand-tagline {
+  font-family: var(--font-script);
+  font-size: 1.3rem;
+  color: var(--rose-deep);
+  line-height: 1.1;
+  margin-top: 2px;
+}
+
+/* Menú de Navegación */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  position: relative;
+  padding: 6px 0;
+  letter-spacing: 0.4px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--grad-aqua-rose);
+  transition: var(--transition);
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: var(--aqua-deep);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--aqua-deep);
+  font-weight: 600;
+}
+
+/* Acciones en Navbar */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cart-toggle-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(99, 159, 169, 0.12);
+  border: 1px solid rgba(99, 159, 169, 0.35);
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cart-toggle-btn:hover {
+  background: var(--aqua-primary);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--rose-deep);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg-opalescent);
+  animation: pulseScale 2s infinite;
+}
+
+.audio-toggle-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(197, 159, 96, 0.14);
+  border: 1px solid rgba(197, 159, 96, 0.35);
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.audio-toggle-btn:hover {
+  background: var(--gold-sacred);
+  color: #2A1E3C;
+}
+
+.audio-toggle-btn.playing {
+  background: var(--gold-sacred);
+  color: #2A1E3C;
+  box-shadow: 0 0 16px rgba(197, 159, 96, 0.7);
+}
+
+.mobile-toggle {
+  display: none;
+  background: transparent;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Hero Section Místico: Templo de la Luz & Portal Cósmico (Fondo Playa & Amuleto)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background-color: #181124;
+  background-image: 
+    linear-gradient(90deg, 
+      rgba(24, 17, 36, 0.94) 0%, 
+      rgba(35, 25, 48, 0.84) 42%, 
+      rgba(35, 72, 80, 0.52) 75%, 
+      rgba(24, 17, 36, 0.72) 100%),
+    url('../img/hero-bg.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  color: var(--text-light);
+  overflow: hidden;
+  padding: 85px 0;
+}
+
+/* Resplandor de aurora y mar sobre la imagen */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 75% 60%, rgba(229, 163, 181, 0.2) 0%, rgba(99, 159, 169, 0.22) 45%, transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+#stars-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-mandala-bg {
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 740px;
+  height: 740px;
+  opacity: 0.16;
+  pointer-events: none;
+  animation: rotateMandala 90s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotateMandala {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-text {
+  max-width: 650px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(99, 159, 169, 0.18);
+  border: 1px solid rgba(141, 196, 207, 0.4);
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--aqua-light);
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-badge i {
+  color: var(--gold-light);
+}
+
+.hero-title {
+  font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+  color: #FFFFFF;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  font-family: var(--font-script);
+  font-size: clamp(2.3rem, 4.2vw, 3.4rem);
+  color: var(--rose-light);
+  line-height: 1.1;
+  margin-bottom: 22px;
+  text-shadow: 0 0 20px rgba(244, 202, 214, 0.45);
+}
+
+.hero-description {
+  font-size: 1.12rem;
+  color: rgba(250, 246, 248, 0.88);
+  line-height: 1.82;
+  margin-bottom: 34px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(197, 159, 96, 0.25);
+}
+
+.hero-stat-item h4 {
+  font-size: 1.4rem;
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.hero-stat-item p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Tarjeta Visual con el Portal & Halo */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-card-orb {
+  position: relative;
+  width: 390px;
+  height: 390px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orb-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(99, 159, 169, 0.4);
+  animation: pulseOrb 4s ease-in-out infinite alternate;
+}
+
+.orb-ring-1 {
+  width: 100%;
+  height: 100%;
+  border-style: dashed;
+  animation-duration: 7s;
+}
+
+.orb-ring-2 {
+  width: 82%;
+  height: 82%;
+  border-color: rgba(229, 163, 181, 0.6);
+  box-shadow: 0 0 40px rgba(197, 159, 96, 0.25);
+}
+
+.hero-logo-frame {
+  position: relative;
+  z-index: 3;
+  width: 255px;
+  height: 255px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  padding: 12px;
+  box-shadow: 0 0 55px rgba(244, 202, 214, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatOrb 5s ease-in-out infinite;
+}
+
+.hero-logo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Badges Flotantes */
+.floating-badge {
+  position: absolute;
+  background: rgba(42, 30, 60, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(141, 196, 207, 0.4);
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  z-index: 4;
+}
+
+.floating-badge i {
+  font-size: 1.4rem;
+  color: var(--gold-light);
+}
+
+.floating-badge-top {
+  top: 10px;
+  left: -20px;
+  animation: floatSmall 4s ease-in-out infinite;
+}
+
+.floating-badge-bottom {
+  bottom: 15px;
+  right: -20px;
+  animation: floatSmall 4.5s ease-in-out infinite 0.5s;
+}
+
+.badge-text-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.badge-text-sub {
+  font-size: 0.75rem;
+  color: var(--aqua-light);
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floatSmall {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseOrb {
+  0% { transform: scale(0.96); opacity: 0.6; }
+  100% { transform: scale(1.04); opacity: 1; }
+}
+
+
+
+/* ==========================================================================
+   Sección: Servicios Holísticos (Reiki, Oráculos, Angeloterapia)
+   ========================================================================== */
+.services-section {
+  padding: 105px 0;
+  background: var(--bg-soft-sand);
+  position: relative;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(229, 163, 181, 0.3);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(229, 163, 181, 0.25);
+  border-color: var(--rose-primary);
+}
+
+.service-card.featured-pack {
+  border: 2px solid var(--gold-sacred);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF2F5 100%);
+  position: relative;
+}
+
+.featured-ribbon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--grad-gold);
+  color: #2A1E3C;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 14px rgba(197, 159, 96, 0.4);
+  z-index: 5;
+}
+
+.service-visual {
+  height: 180px;
+  background: linear-gradient(135deg, #2A1E3C 0%, #181124 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-visual-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(99, 159, 169, 0.2);
+  border: 1.5px solid var(--aqua-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--rose-light);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-visual-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 30px rgba(244, 202, 214, 0.6);
+}
+
+.service-visual-bg-circle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px dashed rgba(141, 196, 207, 0.3);
+  animation: rotateSlow 30s linear infinite;
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.service-body {
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  color: var(--aqua-deep);
+}
+
+.service-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.service-title {
+  font-size: 1.45rem;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.service-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.68;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.service-benefits {
+  margin-bottom: 24px;
+  border-top: 1px dashed rgba(229, 163, 181, 0.35);
+  padding-top: 16px;
+}
+
+.service-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.service-benefits li i {
+  color: var(--aqua-deep);
+  font-size: 0.8rem;
+}
+
+.service-price-block {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(229, 163, 181, 0.25);
+}
+
+.service-price {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.service-price small {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-weight: normal;
+}
+
+.service-amulet-bonus {
+  background: rgba(99, 159, 169, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  color: var(--aqua-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.service-amulet-bonus i {
+  color: var(--gold-sacred);
+}
+
+
+
+/* ==========================================================================
+   Sección: Amuletos & Joyería Consciente (Venta Directa & Hecho a Mano)
+   ========================================================================== */
+.amulets-section {
+  padding: 105px 0;
+  background: var(--bg-opalescent);
+  position: relative;
+}
+
+.amulet-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 45px;
+}
+
+.filter-btn {
+  background: #FFFFFF;
+  border: 1px solid rgba(99, 159, 169, 0.3);
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  color: var(--text-dark);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--grad-aqua-rose);
+  color: #2A1E3C;
+  font-weight: 600;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(99, 159, 169, 0.4);
+}
+
+.amulets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 30px;
+}
+
+.amulet-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(229, 163, 181, 0.28);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.amulet-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(99, 159, 169, 0.22);
+  border-color: var(--aqua-primary);
+}
+
+.amulet-badge-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(42, 30, 60, 0.88);
+  color: var(--gold-light);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+}
+
+.amulet-art-container {
+  height: 250px;
+  background: radial-gradient(circle at 50% 50%, #FAF0F4 0%, #E3EDF0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.amulet-art-svg {
+  width: 170px;
+  height: 170px;
+  transition: transform 0.5s ease;
+  filter: drop-shadow(0 10px 15px rgba(42, 30, 60, 0.2));
+}
+
+.amulet-card:hover .amulet-art-svg {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.amulet-content {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.amulet-stone-type {
+  font-size: 0.8rem;
+  color: var(--aqua-deep);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.amulet-name {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.amulet-description {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.amulet-craft-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--rose-deep);
+  background: rgba(229, 163, 181, 0.14);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 14px;
+}
+
+.amulet-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(229, 163, 181, 0.2);
+}
+
+.amulet-price {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.amulet-btn-add {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--grad-gold);
+  color: #2A1E3C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(197, 159, 96, 0.35);
+  font-weight: bold;
+}
+
+.amulet-btn-add:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(197, 159, 96, 0.55);
+}
+
+
+
+/* ==========================================================================
+   Sección: Preguntas Frecuentes (FAQ)
+   ========================================================================== */
+.faq-section {
+  padding: 95px 0;
+  background: var(--bg-opalescent);
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(99, 159, 169, 0.25);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq-item.active {
+  border-color: var(--aqua-primary);
+  box-shadow: 0 4px 16px rgba(99, 159, 169, 0.15);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 24px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.faq-question i {
+  color: var(--aqua-deep);
+  transition: transform 0.3s ease;
+  font-size: 1rem;
+}
+
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  padding: 0 24px;
+  color: var(--text-muted);
+  font-size: 0.94rem;
+  line-height: 1.7;
+}
+
+.faq-answer p {
+  padding-bottom: 20px;
+}
+
+/* ==========================================================================
+   Footer Místico
+   ========================================================================== */
+.main-footer {
+  background: #181124;
+  color: var(--text-light);
+  padding: 85px 0 32px 0;
+  border-top: 1px solid rgba(197, 159, 96, 0.25);
+  position: relative;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-brand p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.92rem;
+  margin: 18px 0 24px 0;
+  line-height: 1.7;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(141, 196, 207, 0.35);
+  color: var(--rose-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.social-icon:hover {
+  background: var(--aqua-primary);
+  color: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(99, 159, 169, 0.5);
+}
+
+.footer-col h4 {
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  margin-bottom: 22px;
+  letter-spacing: 0.8px;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--gold-sacred);
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--rose-light);
+  padding-left: 6px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ==========================================================================
+   Carrito Drawer Lateral & Modales
+   ========================================================================== */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(24, 17, 36, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.cart-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  background: #FFFFFF;
+  z-index: 1001;
+  box-shadow: -10px 0 35px rgba(24, 17, 36, 0.25);
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-drawer.active {
+  right: 0;
+}
+
+.cart-header {
+  padding: 22px 24px;
+  border-bottom: 1px solid rgba(229, 163, 181, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-header h3 {
+  font-size: 1.3rem;
+  color: var(--text-dark);
+}
+
+.close-cart-btn {
+  background: transparent;
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.close-cart-btn:hover {
+  color: var(--text-dark);
+}
+
+.cart-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.cart-empty-message {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--text-muted);
+}
+
+.cart-empty-message i {
+  font-size: 3rem;
+  color: var(--aqua-primary);
+  margin-bottom: 16px;
+  opacity: 0.65;
+}
+
+.cart-item {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.cart-item-img {
+  width: 65px;
+  height: 65px;
+  border-radius: var(--radius-sm);
+  background: var(--rose-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+}
+
+.cart-item-title {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.cart-item-price {
+  font-size: 0.88rem;
+  color: var(--rose-deep);
+  font-weight: 600;
+}
+
+.cart-qty-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.qty-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: #F0ECE8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.cart-footer {
+  padding: 20px 24px;
+  border-top: 1px solid rgba(229, 163, 181, 0.25);
+  background: #FCFAF8;
+}
+
+.cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* Toast Notificación */
+.mystic-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #181124;
+  color: #FFFFFF;
+  border: 1px solid var(--gold-light);
+  padding: 14px 22px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2000;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.mystic-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.mystic-toast i {
+  color: var(--gold-light);
+  font-size: 1.2rem;
+}
+
+/* WhatsApp Flotante Directo */
+.floating-whatsapp-widget {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 950;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-float-wa {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  cursor: pointer;
+  transition: var(--transition);
+  animation: pulseScale 3s infinite;
+}
+
+.btn-float-wa:hover {
+  transform: scale(1.1);
+}
+
+.float-wa-tooltip {
+  background: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  white-space: nowrap;
+  border: 1px solid rgba(99, 159, 169, 0.3);
+}
+
+@keyframes pulseScale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ==========================================================================
+   Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero-section {
+    background-image: 
+      linear-gradient(180deg, 
+        rgba(24, 17, 36, 0.94) 0%, 
+        rgba(35, 25, 48, 0.86) 55%, 
+        rgba(35, 72, 80, 0.68) 100%),
+      url('../img/hero-bg.jpg');
+    background-position: center bottom;
+  }
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-text {
+    margin: 0 auto;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-stats {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 78px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 78px);
+    background: #FFFFFF;
+    flex-direction: column;
+    padding: 40px 24px;
+    gap: 22px;
+    transition: left 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .brand-logo img {
+    width: 64px;
+    height: 64px;
+  }
+  .brand-name {
+    font-size: 1.45rem;
+  }
+  .brand-tagline {
+    font-size: 1.05rem;
+  }
+  .hero-card-orb {
+    width: 290px;
+    height: 290px;
+  }
+  .hero-logo-frame {
+    width: 190px;
+    height: 190px;
+  }
+  .floating-badge {
+    display: none;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  .floating-whatsapp-widget {
+    bottom: 20px;
+    left: 20px;
+  }
+  .float-wa-tooltip {
+    display: none;
+  }
+}
