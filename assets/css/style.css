@@ -1296,9 +1296,34 @@ h1, h2, h3, h4, h5 {
 .amulet-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 14px;
   border-top: 1px solid rgba(229, 163, 181, 0.2);
+  margin-top: auto;
+}
+
+.amulet-btn-consult {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  background: var(--grad-gold);
+  color: #2A1E3C;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: var(--transition);
+  box-shadow: 0 4px 14px rgba(197, 159, 96, 0.35);
+}
+
+.amulet-btn-consult:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(197, 159, 96, 0.55);
+  color: #2A1E3C;
 }
 
 .amulet-price {
