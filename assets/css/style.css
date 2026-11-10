@@ -814,13 +814,40 @@ h1, h2, h3, h4, h5 {
   position: relative;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+.services-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.services-carousel-track {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 4px 30px 4px;
+  width: 100%;
+  scrollbar-width: none; /* Firefox */
+}
+
+.services-carousel-track::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.service-slide {
+  flex: 0 0 calc(33.333% - 19px);
+  min-width: 310px;
+  max-width: 390px;
+  scroll-snap-align: center;
+  display: flex;
 }
 
 .service-card {
+  width: 100%;
   background: #FFFFFF;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -830,6 +857,68 @@ h1, h2, h3, h4, h5 {
   display: flex;
   flex-direction: column;
   position: relative;
+}
+
+/* Botones de navegación del Carrusel */
+.carousel-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid var(--rose-primary);
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(42, 30, 60, 0.12);
+  transition: var(--transition);
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  background: var(--gold-sacred);
+  color: #2A1E3C;
+  border-color: var(--gold-sacred);
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(197, 159, 96, 0.4);
+}
+
+.carousel-prev {
+  margin-right: 14px;
+}
+
+.carousel-next {
+  margin-left: 14px;
+}
+
+/* Indicadores / Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.dot-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(99, 159, 169, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot-btn.active {
+  width: 32px;
+  border-radius: 10px;
+  background: var(--rose-primary);
+  box-shadow: 0 2px 8px rgba(229, 163, 181, 0.5);
 }
 
 .service-card:hover {
@@ -1656,6 +1745,36 @@ h1, h2, h3, h4, h5 {
   }
   .mobile-toggle {
     display: block;
+  }
+}
+
+@media (max-width: 992px) {
+  .service-slide {
+    flex: 0 0 calc(50% - 14px);
+    min-width: 280px;
+  }
+  .carousel-btn {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .service-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .carousel-prev {
+    margin-right: 6px;
+  }
+  .carousel-next {
+    margin-left: 6px;
+  }
+  .carousel-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
   }
 }
 

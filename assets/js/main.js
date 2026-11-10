@@ -7,6 +7,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initStarCanvas();
+  initServicesCarousel();
   initAmuletFilters();
   initCart();
   initFAQ();
@@ -143,6 +144,66 @@ function initStarCanvas() {
   }
 
   animate();
+}
+
+/* ==========================================================================
+   3. Carrusel Interactivo de Servicios Holísticos
+   ========================================================================== */
+function initServicesCarousel() {
+  const track = document.getElementById('services-track');
+  const prevBtn = document.getElementById('services-prev');
+  const nextBtn = document.getElementById('services-next');
+  const dots = document.querySelectorAll('#services-dots .dot-btn');
+  const slides = document.querySelectorAll('.service-slide');
+
+  if (!track || slides.length === 0) return;
+
+  function getSlideStep() {
+    const slide = slides[0];
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 28;
+    return slide.offsetWidth + gap;
+  }
+
+  function updateDots() {
+    const scrollLeft = track.scrollLeft;
+    const step = getSlideStep();
+    const activeIndex = Math.min(slides.length - 1, Math.max(0, Math.round(scrollLeft / step)));
+
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === activeIndex);
+    });
+  }
+
+  prevBtn?.addEventListener('click', () => {
+    track.scrollBy({ left: -getSlideStep(), behavior: 'smooth' });
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    track.scrollBy({ left: getSlideStep(), behavior: 'smooth' });
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const targetIndex = parseInt(dot.dataset.index, 10);
+      const step = getSlideStep();
+      track.scrollTo({ left: targetIndex * step, behavior: 'smooth' });
+    });
+  });
+
+  track.addEventListener('scroll', () => {
+    // Debounce sutil para rendimiento
+    window.requestAnimationFrame(updateDots);
+  });
+
+  // Teclado accesible cuando el carrusel tiene foco
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      prevBtn?.click();
+    } else if (e.key === 'ArrowRight') {
+      nextBtn?.click();
+    }
+  });
 }
 
 
