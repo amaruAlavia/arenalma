@@ -818,18 +818,20 @@ h1, h2, h3, h4, h5 {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  max-width: 100%;
+  max-width: 680px;
+  width: 100%;
 }
 
 .services-carousel-track {
   display: flex;
-  gap: 28px;
+  gap: 0;
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  padding: 20px 4px 30px 4px;
+  padding: 15px 0 25px 0;
   width: 100%;
   scrollbar-width: none; /* Firefox */
 }
@@ -839,11 +841,14 @@ h1, h2, h3, h4, h5 {
 }
 
 .service-slide {
-  flex: 0 0 calc(33.333% - 19px);
-  min-width: 310px;
-  max-width: 390px;
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
   scroll-snap-align: center;
   display: flex;
+  box-sizing: border-box;
+  padding: 0 4px;
 }
 
 .service-card {
@@ -1749,27 +1754,18 @@ h1, h2, h3, h4, h5 {
 }
 
 @media (max-width: 992px) {
-  .service-slide {
-    flex: 0 0 calc(50% - 14px);
-    min-width: 280px;
-  }
   .carousel-btn {
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
   }
 }
 
 @media (max-width: 640px) {
-  .service-slide {
-    flex: 0 0 100%;
-    min-width: 100%;
-    max-width: 100%;
-  }
   .carousel-prev {
-    margin-right: 6px;
+    margin-right: 4px;
   }
   .carousel-next {
-    margin-left: 6px;
+    margin-left: 4px;
   }
   .carousel-btn {
     width: 38px;
