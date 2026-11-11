@@ -1428,7 +1428,7 @@ h1, h2, h3, h4, h5 {
 .main-footer {
   background: #181124;
   color: var(--text-light);
-  padding: 85px 0 32px 0;
+  padding: 48px 0 22px 0;
   border-top: 1px solid rgba(197, 159, 96, 0.25);
   position: relative;
 }
@@ -1436,22 +1436,23 @@ h1, h2, h3, h4, h5 {
 .footer-top {
   display: grid;
   grid-template-columns: 1.6fr 1.2fr 1.2fr;
-  gap: 50px;
-  margin-bottom: 60px;
+  gap: 40px;
+  margin-bottom: 32px;
 }
 
 @media (max-width: 900px) {
   .footer-top {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 28px;
+    margin-bottom: 28px;
   }
 }
 
 .footer-brand p {
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.92rem;
-  margin: 18px 0 24px 0;
-  line-height: 1.7;
+  margin: 12px 0 18px 0;
+  line-height: 1.6;
 }
 
 .footer-socials {
@@ -1483,7 +1484,7 @@ h1, h2, h3, h4, h5 {
 .footer-col h4 {
   color: #FFFFFF;
   font-size: 1.15rem;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
   letter-spacing: 0.8px;
   position: relative;
   display: inline-block;
@@ -1500,7 +1501,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .footer-links li {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .footer-links a {
@@ -1517,12 +1518,12 @@ h1, h2, h3, h4, h5 {
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 30px;
+  padding-top: 18px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  gap: 12px;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.55);
 }
