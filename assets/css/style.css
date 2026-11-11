@@ -1435,9 +1435,22 @@ h1, h2, h3, h4, h5 {
 
 .footer-top {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-  gap: 40px;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1.1fr;
+  gap: 32px;
   margin-bottom: 60px;
+}
+
+@media (max-width: 1024px) {
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
 }
 
 .footer-brand p {
@@ -1500,6 +1513,7 @@ h1, h2, h3, h4, h5 {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9rem;
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .footer-links a:hover {
@@ -1511,10 +1525,180 @@ h1, h2, h3, h4, h5 {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding-top: 30px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 15px;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.55);
+}
+
+.footer-legal-inline a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.footer-legal-inline a:hover {
+  color: var(--rose-light);
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Modales Legales Místicos (Marco Legal Chile)
+   ========================================================================== */
+.legal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(24, 17, 36, 0.78);
+  backdrop-filter: blur(8px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.legal-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.legal-modal-container {
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 720px;
+  max-height: 85vh;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--rose-primary);
+  box-shadow: 0 25px 60px rgba(24, 17, 36, 0.45);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalSlideUp {
+  from {
+    transform: translateY(30px) scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.legal-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 28px;
+  background: linear-gradient(135deg, #FAF6F8 0%, #F5EEF3 100%);
+  border-bottom: 1px solid rgba(229, 163, 181, 0.3);
+}
+
+.legal-modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legal-modal-title-wrap i {
+  font-size: 1.3rem;
+}
+
+.legal-modal-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.close-legal-modal {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.close-legal-modal:hover {
+  background: rgba(229, 163, 181, 0.25);
+  color: var(--text-dark);
+}
+
+.legal-modal-body {
+  padding: 28px;
+  overflow-y: auto;
+  line-height: 1.7;
+  color: var(--text-dark);
+  font-size: 0.93rem;
+}
+
+.legal-modal-body h4 {
+  font-family: var(--font-serif);
+  color: var(--text-dark);
+  font-size: 1.15rem;
+  margin: 22px 0 10px 0;
+  border-left: 3px solid var(--gold-sacred);
+  padding-left: 10px;
+}
+
+.legal-modal-body h4:first-child {
+  margin-top: 0;
+}
+
+.legal-modal-body p {
+  margin-bottom: 14px;
+  color: #3F3348;
+}
+
+.legal-modal-body ul {
+  margin-bottom: 16px;
+  padding-left: 20px;
+}
+
+.legal-modal-body li {
+  list-style: disc;
+  margin-bottom: 6px;
+  color: #4A3C55;
+}
+
+.legal-alert-box {
+  background: rgba(99, 159, 169, 0.12);
+  border: 1px solid var(--aqua-primary);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin: 18px 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.legal-alert-box strong {
+  color: var(--aqua-deep);
+}
+
+.legal-modal-footer {
+  padding: 16px 28px;
+  background: #FAF6F8;
+  border-top: 1px solid rgba(229, 163, 181, 0.25);
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* ==========================================================================

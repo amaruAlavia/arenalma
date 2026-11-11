@@ -756,15 +756,25 @@
         </div>
 
         <div class="footer-col">
+          <h4>Legal & Confianza</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="open-legal-modal" data-modal="aviso-legal">Aviso Legal</a></li>
+            <li><a href="#" class="open-legal-modal" data-modal="politica-privacidad">Política de Privacidad</a></li>
+            <li><a href="#" class="open-legal-modal" data-modal="politica-cookies">Política de Cookies</a></li>
+            <li><a href="#" class="open-legal-modal" data-modal="descargo-medico">Descargo de Responsabilidad (MINSAL)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
           <h4>Ubicación & Contacto</h4>
           <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 10px;">
-            <i class="fa-solid fa-map-pin" style="color:var(--rg-light); margin-right:8px;"></i> La Serena y Coquimbo, IV Región, Chile.
+            <i class="fa-solid fa-map-pin" style="color:var(--rose-light); margin-right:8px;"></i> La Serena y Coquimbo, IV Región, Chile.
           </p>
           <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 10px;">
-            <i class="fa-brands fa-whatsapp" style="color:var(--rg-light); margin-right:8px;"></i> +56 9 1234 5678
+            <i class="fa-brands fa-whatsapp" style="color:var(--rose-light); margin-right:8px;"></i> +56 9 1234 5678
           </p>
           <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">
-            <i class="fa-regular fa-clock" style="color:var(--rg-light); margin-right:8px;"></i> Lun - Sáb: 10:00 - 19:30 hrs
+            <i class="fa-regular fa-clock" style="color:var(--rose-light); margin-right:8px;"></i> Lun - Sáb: 10:00 - 19:30 hrs
           </p>
         </div>
       </div>
@@ -773,12 +783,44 @@
         <div>
           © 2026 <strong>Arenalma</strong> — "Reconecta con tu esencia". Todos los derechos reservados.
         </div>
+        <div class="footer-legal-inline">
+          <a href="#" class="open-legal-modal" data-modal="aviso-legal">Aviso Legal</a> • 
+          <a href="#" class="open-legal-modal" data-modal="politica-privacidad">Privacidad</a> • 
+          <a href="#" class="open-legal-modal" data-modal="politica-cookies">Cookies</a>
+        </div>
         <div>
           Terapias Holísticas y Amuletos Artesanales • La Serena & Coquimbo, Chile
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- ==========================================================================
+       Modales Legales Místicos (Marco Legal Chile: Ley 19.628, Ley 19.496, Dec. 42 MINSAL)
+       ========================================================================== -->
+  <div class="legal-modal-overlay" id="legal-modal-overlay">
+    <div class="legal-modal-container" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
+      <div class="legal-modal-header">
+        <div class="legal-modal-title-wrap">
+          <i class="fa-solid fa-scale-balanced text-gold"></i>
+          <h3 id="legal-modal-title">Información Legal</h3>
+        </div>
+        <button class="close-legal-modal" id="close-legal-modal" aria-label="Cerrar modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="legal-modal-body" id="legal-modal-body">
+        <!-- Contenido inyectado dinámicamente según apartado seleccionado -->
+      </div>
+
+      <div class="legal-modal-footer">
+        <button class="btn-mystic btn-mystic-outline" id="btn-modal-understand" style="padding: 8px 24px; font-size: 0.85rem;">
+          Entendido & Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- ==========================================================================
        Drawer de Carrito de Amuletos
