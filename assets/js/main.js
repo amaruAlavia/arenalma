@@ -629,6 +629,38 @@ function initLegalModals() {
         <h4>Acompañamiento Amoroso y Ético</h4>
         <p>Nuestra labor se fundamenta en la calidez, la empatía y la conexión espiritual para ayudarte a reconectar con tu paz interior y sabiduría innata, complementando armónicamente tu cuidado de salud integral.</p>
       `
+    },
+
+    'faq': {
+      title: 'Preguntas Frecuentes (FAQ)',
+      body: `
+        <div style="display:flex; flex-direction:column; gap:1.25rem;">
+          <div>
+            <h4 style="color:var(--gold-sacred); margin-bottom:0.4rem; font-size:1.05rem;"><i class="fa-solid fa-sparkles" style="font-size:0.85rem; margin-right:6px;"></i> ¿Cómo funciona una sesión de Reiki a distancia?</h4>
+            <p>La energía no está sujeta al tiempo ni al espacio físico. En las sesiones a distancia nos conectamos a la hora acordada mediante videollamada para una breve conversación inicial. Luego te recuestas en un espacio tranquilo mientras canalizamos el Reiki hacia tu campo áurico y chakras. Al finalizar, compartimos las sensaciones y mensajes percibidos.</p>
+          </div>
+
+          <div>
+            <h4 style="color:var(--gold-sacred); margin-bottom:0.4rem; font-size:1.05rem;"><i class="fa-solid fa-location-dot" style="font-size:0.85rem; margin-right:6px;"></i> ¿En qué lugares de La Serena y Coquimbo se realizan las sesiones presenciales?</h4>
+            <p>Contamos con un espacio acogedor, íntimo y armonizado especialmente acondicionado en la conurbación La Serena - Coquimbo. Una vez que agendas tu sesión por WhatsApp, te compartimos la ubicación exacta e indicaciones para tu llegada.</p>
+          </div>
+
+          <div>
+            <h4 style="color:var(--gold-sacred); margin-bottom:0.4rem; font-size:1.05rem;"><i class="fa-solid fa-water" style="font-size:0.85rem; margin-right:6px;"></i> ¿Puedo mojar mi amuleto de hilo encerado?</h4>
+            <p>¡Sí, con total tranquilidad! Utilizamos hilo encerado brasileño de primera calidad (Linhasita), el cual repele el agua, no se deshilacha, no retiene humedad ni malos olores y conserva su tonalidad original. Puedes ducharte o ir a la playa con él puesto.</p>
+          </div>
+
+          <div>
+            <h4 style="color:var(--gold-sacred); margin-bottom:0.4rem; font-size:1.05rem;"><i class="fa-solid fa-gem" style="font-size:0.85rem; margin-right:6px;"></i> ¿Cómo se limpian energéticamente los cristales del amuleto?</h4>
+            <p>Cada pieza se entrega purificada y consagrada con Reiki. Con el tiempo y uso, cuando sientas que ha absorbido energías densas, puedes sahumarla suavemente con humo de palo santo o salvia blanca, o colocarla sobre una drusa de cuarzo o a la luz serena de la Luna Llena.</p>
+          </div>
+
+          <div>
+            <h4 style="color:var(--gold-sacred); margin-bottom:0.4rem; font-size:1.05rem;"><i class="fa-solid fa-hands-holding-heart" style="font-size:0.85rem; margin-right:6px;"></i> ¿Puedo encargar un amuleto con un cristal que no está en la web?</h4>
+            <p>Por supuesto. Si resuenas con un cristal específico o requieres un amuleto personalizado según tu intención o fecha de nacimiento, escríbenos directamente por WhatsApp y la artesana lo co-creará contigo.</p>
+          </div>
+        </div>
+      `
     }
   };
 
