@@ -58,13 +58,8 @@
         <a href="#amuletos" class="nav-link">Amuletos</a>
       </nav>
 
-      <!-- Acciones de Cabecera (Audio & Mobile) -->
+      <!-- Acciones de Cabecera (Mobile) -->
       <div class="nav-actions">
-        <!-- Botón de Audio Relajante Cuenco a 432Hz -->
-        <button class="audio-toggle-btn" title="Activar/Desactivar música relajante 432Hz" aria-label="Música ambiental">
-          <i class="fa-solid fa-volume-xmark"></i>
-        </button>
-
         <!-- Botón Móvil -->
         <button class="mobile-toggle" aria-label="Abrir menú de navegación">
           <i class="fa-solid fa-bars"></i>
@@ -101,6 +96,30 @@
           <path d="M50 4 C46 16 42 24 50 32 C58 24 54 16 50 4 Z" transform="rotate(330 50 50)" />
         </g>
       </svg>
+
+      <!-- Botón de Audio Cuenco Tibetano (Centro Superior del Hero) -->
+      <div class="hero-audio-wrapper">
+        <button class="hero-singing-bowl-btn audio-toggle-btn" 
+                title="Activar cuenco tibetano (432Hz)" 
+                aria-label="Cuenco Tibetano 432Hz">
+          <svg class="singing-bowl-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Ondas sonoras de vibración armónica -->
+            <path class="bowl-wave wave-inner-left" d="M13 28 C10 33 10 39 13 44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            <path class="bowl-wave wave-inner-right" d="M51 28 C54 33 54 39 51 44" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+            <path class="bowl-wave wave-outer-left" d="M7 23 C3 31 3 41 7 49" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path class="bowl-wave wave-outer-right" d="M57 23 C61 31 61 41 57 49" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <!-- Baqueta de madera de toque -->
+            <path d="M43 13 L36 25" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+            <circle cx="44" cy="12" r="2.2" fill="currentColor" />
+            <!-- Borde superior del cuenco -->
+            <ellipse cx="32" cy="26" rx="17" ry="4.5" stroke="currentColor" stroke-width="2.5" fill="none" />
+            <!-- Cuerpo acampanado del cuenco tibetano -->
+            <path d="M15 26 C15 45 22 50 32 50 C42 50 49 45 49 26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="currentColor" fill-opacity="0.22" />
+            <!-- Base de apoyo / cojín -->
+            <path d="M25 50 C25 53 27 54 32 54 C37 54 39 53 39 50" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
 
       <div class="container hero-content">
         <div class="hero-text">

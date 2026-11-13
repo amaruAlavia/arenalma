@@ -437,13 +437,14 @@ function initMysticAudio() {
     if (!isAudioPlaying) {
       startAmbientSound();
       audioToggleBtn.classList.add('playing');
-      audioToggleBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-      showToast('🎵 Música holística de fondo activada (432Hz)');
+      audioToggleBtn.setAttribute('title', 'Pausar cuenco tibetano (432Hz)');
+      showToast('🥣 Cuenco tibetano activado (432Hz)');
       isAudioPlaying = true;
     } else {
       stopAmbientSound();
       audioToggleBtn.classList.remove('playing');
-      audioToggleBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+      audioToggleBtn.setAttribute('title', 'Activar cuenco tibetano (432Hz)');
+      showToast('🔇 Cuenco tibetano en pausa');
       isAudioPlaying = false;
     }
   });

@@ -528,6 +528,117 @@ h1, h2, h3, h4, h5 {
   box-shadow: 0 0 16px rgba(197, 159, 96, 0.7);
 }
 
+/* ==========================================================================
+   Botón de Audio Cuenco Tibetano - Círculo Pequeño en Centro Superior del Hero
+   ========================================================================== */
+.hero-audio-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-singing-bowl-btn {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  background: rgba(24, 17, 36, 0.72);
+  border: 1.5px solid rgba(228, 200, 142, 0.55);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 10px rgba(197, 159, 96, 0.15);
+}
+
+.hero-singing-bowl-btn .singing-bowl-svg {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.hero-singing-bowl-btn .bowl-wave {
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+}
+
+/* Hover místico */
+.hero-singing-bowl-btn:hover {
+  background: rgba(42, 30, 60, 0.85);
+  border-color: var(--gold-shimmer);
+  color: #FFFFFF;
+  transform: scale(1.1);
+  box-shadow: 0 0 22px rgba(228, 200, 142, 0.55), 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero-singing-bowl-btn:hover .singing-bowl-svg {
+  transform: rotate(-6deg) scale(1.05);
+}
+
+.hero-singing-bowl-btn:hover .bowl-wave {
+  opacity: 0.8;
+}
+
+/* Estado Activo / Sonando Cuenco Tibetano a 432Hz */
+.hero-singing-bowl-btn.playing {
+  background: var(--grad-gold);
+  border-color: #FFFFFF;
+  color: #181124;
+  box-shadow: 0 0 25px rgba(228, 200, 142, 0.9), 0 0 50px rgba(197, 159, 96, 0.5);
+  animation: pulseBowlRing 2.4s infinite ease-in-out;
+}
+
+.hero-singing-bowl-btn.playing .singing-bowl-svg {
+  animation: bowlResonance 1.8s infinite ease-in-out;
+}
+
+.hero-singing-bowl-btn.playing .bowl-wave {
+  opacity: 1;
+}
+
+.hero-singing-bowl-btn.playing .wave-inner-left,
+.hero-singing-bowl-btn.playing .wave-inner-right {
+  animation: wavePulse 1.2s infinite ease-in-out alternate;
+}
+
+.hero-singing-bowl-btn.playing .wave-outer-left,
+.hero-singing-bowl-btn.playing .wave-outer-right {
+  animation: wavePulse 1.2s infinite ease-in-out alternate 0.35s;
+}
+
+@keyframes wavePulse {
+  0% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+@keyframes pulseBowlRing {
+  0%, 100% {
+    box-shadow: 0 0 16px rgba(228, 200, 142, 0.7), 0 0 0 0 rgba(228, 200, 142, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(228, 200, 142, 0.95), 0 0 0 8px rgba(228, 200, 142, 0);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bowlResonance {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
 .mobile-toggle {
   display: none;
   background: transparent;
