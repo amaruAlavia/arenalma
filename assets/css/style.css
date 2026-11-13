@@ -920,62 +920,28 @@ h1, h2, h3, h4, h5 {
 
 
 /* ==========================================================================
-   Sección: Servicios Holísticos (Reiki, Oráculos, Angeloterapia) - Scroll-Driven Carousel
+   Sección: Servicios Holísticos - Cartas Apiladas Suaves (Stacking Cards)
    ========================================================================== */
 .services-section {
-  position: relative;
+  padding: 95px 0 130px 0;
   background: var(--bg-soft-sand);
-  padding: 0;
-  height: 400vh; /* Altura para recorrer los 4 slides mediante scroll */
+  position: relative;
 }
 
-.services-sticky-container {
-  position: sticky;
-  top: 70px;
-  height: calc(100vh - 70px);
-  min-height: 600px;
+.services-stack-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  padding: 30px 0 20px 0;
-}
-
-.services-carousel-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 36px;
+  max-width: 1040px;
   margin: 0 auto;
-  max-width: 1140px;
-  width: 100%;
+  position: relative;
 }
 
-.services-carousel-track {
-  display: flex;
-  gap: 0;
-  overflow-x: auto;
-  scroll-behavior: auto;
-  scroll-snap-type: none;
-  -webkit-overflow-scrolling: touch;
-  padding: 10px 0 15px 0;
-  width: 100%;
-  scrollbar-width: none; /* Firefox */
-}
-
-.services-carousel-track::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
-
-.service-slide {
-  flex: 0 0 100%;
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
-  scroll-snap-align: center;
-  display: flex;
-  box-sizing: border-box;
-  padding: 0 8px;
+.service-stack-card {
+  position: sticky;
+  top: calc(90px + (var(--stack-index, 1) * 22px));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: var(--stack-index, 1);
 }
 
 .service-card {
@@ -983,13 +949,24 @@ h1, h2, h3, h4, h5 {
   background: #FFFFFF;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid rgba(229, 163, 181, 0.35);
-  box-shadow: 0 15px 35px rgba(42, 30, 60, 0.08);
-  transition: var(--transition);
+  border: 1px solid rgba(229, 163, 181, 0.4);
+  box-shadow: 0 18px 45px rgba(42, 30, 60, 0.09), 0 2px 10px rgba(0, 0, 0, 0.03);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   position: relative;
-  min-height: 480px;
+  min-height: 460px;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 55px rgba(42, 30, 60, 0.14), 0 0 25px rgba(229, 163, 181, 0.25);
+  border-color: var(--rose-primary);
+}
+
+.service-card.featured-pack {
+  border: 2px solid var(--gold-sacred);
+  box-shadow: 0 22px 50px rgba(197, 159, 96, 0.22);
 }
 
 @media (max-width: 900px) {
@@ -999,67 +976,7 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-/* Botones de navegación del Carrusel */
-.carousel-btn {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.98);
-  border: 1.5px solid var(--rose-primary);
-  color: var(--text-dark);
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 6px 22px rgba(42, 30, 60, 0.15);
-  transition: var(--transition);
-  z-index: 10;
-  flex-shrink: 0;
-}
 
-.carousel-btn:hover {
-  background: var(--gold-sacred);
-  color: #2A1E3C;
-  border-color: var(--gold-sacred);
-  transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(197, 159, 96, 0.4);
-}
-
-.carousel-prev {
-  margin-right: 14px;
-}
-
-.carousel-next {
-  margin-left: 14px;
-}
-
-/* Indicadores / Dots */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.dot-btn {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: rgba(99, 159, 169, 0.3);
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-}
-
-.dot-btn.active {
-  width: 32px;
-  border-radius: 10px;
-  background: var(--rose-primary);
-  box-shadow: 0 2px 8px rgba(229, 163, 181, 0.5);
-}
 
 .service-card:hover {
   transform: translateY(-8px);
@@ -2113,36 +2030,13 @@ h1, h2, h3, h4, h5 {
 
 @media (max-width: 992px) {
   .services-section {
-    height: auto;
-    padding: 70px 0;
+    padding: 70px 0 90px 0;
   }
-  .services-sticky-container {
-    position: static;
-    height: auto;
-    min-height: auto;
-    padding: 0;
+  .services-stack-container {
+    gap: 24px;
   }
-  .services-carousel-track {
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-  }
-  .carousel-btn {
-    width: 44px;
-    height: 44px;
-  }
-}
-
-@media (max-width: 640px) {
-  .carousel-prev {
-    margin-right: 4px;
-  }
-  .carousel-next {
-    margin-left: 4px;
-  }
-  .carousel-btn {
-    width: 38px;
-    height: 38px;
-    font-size: 0.95rem;
+  .service-stack-card {
+    top: calc(75px + (var(--stack-index, 1) * 14px));
   }
 }
 
