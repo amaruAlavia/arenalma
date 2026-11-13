@@ -148,9 +148,11 @@ function initStarCanvas() {
 }
 
 /* ==========================================================================
-   3. Carrusel Interactivo de Servicios Holísticos
+   3. Carrusel Interactivo de Servicios Holísticos (Scroll-Driven Pinning)
    ========================================================================== */
 function initServicesCarousel() {
+  const section = document.getElementById('servicios');
+  const stickyContainer = document.querySelector('.services-sticky-container');
   const track = document.getElementById('services-track');
   const prevBtn = document.getElementById('services-prev');
   const nextBtn = document.getElementById('services-next');
@@ -162,19 +164,47 @@ function initServicesCarousel() {
   function getSlideStep() {
     const slide = slides[0];
     const style = window.getComputedStyle(track);
-    const gap = parseFloat(style.gap) || 28;
+    const gap = parseFloat(style.gap) || 0;
     return slide.offsetWidth + gap;
   }
 
-  function updateDots() {
-    const scrollLeft = track.scrollLeft;
-    const step = getSlideStep();
-    const activeIndex = Math.min(slides.length - 1, Math.max(0, Math.round(scrollLeft / step)));
+  function updateDots(customIndex) {
+    let activeIndex;
+    if (typeof customIndex === 'number') {
+      activeIndex = customIndex;
+    } else {
+      const scrollLeft = track.scrollLeft;
+      const step = getSlideStep();
+      activeIndex = Math.min(slides.length - 1, Math.max(0, Math.round(scrollLeft / step)));
+    }
 
     dots.forEach((dot, idx) => {
       dot.classList.toggle('active', idx === activeIndex);
     });
   }
+
+  // Sincronización del carrusel con el scroll vertical de la página
+  function handleScroll() {
+    if (!section || !stickyContainer) return;
+    const rect = section.getBoundingClientRect();
+    const sectionTop = rect.top;
+    const sectionHeight = section.offsetHeight;
+    const stickyHeight = stickyContainer.offsetHeight;
+    const scrollableDistance = sectionHeight - stickyHeight;
+
+    if (scrollableDistance <= 0) return;
+
+    // Distancia recorrida dentro de la sección pegajosa
+    const progress = Math.min(1, Math.max(0, -sectionTop / scrollableDistance));
+    const maxScrollLeft = track.scrollWidth - track.clientWidth;
+    track.scrollLeft = progress * maxScrollLeft;
+
+    const activeIndex = Math.min(slides.length - 1, Math.floor(progress * slides.length + 0.1));
+    updateDots(activeIndex);
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', handleScroll);
 
   prevBtn?.addEventListener('click', () => {
     track.scrollBy({ left: -getSlideStep(), behavior: 'smooth' });
@@ -187,17 +217,22 @@ function initServicesCarousel() {
   dots.forEach(dot => {
     dot.addEventListener('click', () => {
       const targetIndex = parseInt(dot.dataset.index, 10);
-      const step = getSlideStep();
-      track.scrollTo({ left: targetIndex * step, behavior: 'smooth' });
+      if (section && stickyContainer) {
+        const sectionTop = section.offsetTop;
+        const scrollableDistance = section.offsetHeight - stickyContainer.offsetHeight;
+        const targetScroll = sectionTop + (targetIndex / (slides.length - 1)) * scrollableDistance;
+        window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+      } else {
+        const step = getSlideStep();
+        track.scrollTo({ left: targetIndex * step, behavior: 'smooth' });
+      }
     });
   });
 
   track.addEventListener('scroll', () => {
-    // Debounce sutil para rendimiento
-    window.requestAnimationFrame(updateDots);
+    window.requestAnimationFrame(() => updateDots());
   });
 
-  // Teclado accesible cuando el carrusel tiene foco
   track.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') {
       prevBtn?.click();
@@ -205,6 +240,9 @@ function initServicesCarousel() {
       nextBtn?.click();
     }
   });
+
+  // Ejecutar una vez al inicio
+  handleScroll();
 }
 
 

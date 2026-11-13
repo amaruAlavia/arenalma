@@ -920,12 +920,25 @@ h1, h2, h3, h4, h5 {
 
 
 /* ==========================================================================
-   Sección: Servicios Holísticos (Reiki, Oráculos, Angeloterapia)
+   Sección: Servicios Holísticos (Reiki, Oráculos, Angeloterapia) - Scroll-Driven Carousel
    ========================================================================== */
 .services-section {
-  padding: 105px 0;
-  background: var(--bg-soft-sand);
   position: relative;
+  background: var(--bg-soft-sand);
+  padding: 0;
+  height: 400vh; /* Altura para recorrer los 4 slides mediante scroll */
+}
+
+.services-sticky-container {
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 30px 0 20px 0;
 }
 
 .services-carousel-wrapper {
@@ -942,10 +955,10 @@ h1, h2, h3, h4, h5 {
   display: flex;
   gap: 0;
   overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
   -webkit-overflow-scrolling: touch;
-  padding: 15px 0 25px 0;
+  padding: 10px 0 15px 0;
   width: 100%;
   scrollbar-width: none; /* Firefox */
 }
@@ -2099,6 +2112,20 @@ h1, h2, h3, h4, h5 {
 }
 
 @media (max-width: 992px) {
+  .services-section {
+    height: auto;
+    padding: 70px 0;
+  }
+  .services-sticky-container {
+    position: static;
+    height: auto;
+    min-height: auto;
+    padding: 0;
+  }
+  .services-carousel-track {
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
   .carousel-btn {
     width: 44px;
     height: 44px;
