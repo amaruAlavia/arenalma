@@ -94,13 +94,13 @@ function initStarCanvas() {
     const count = Math.floor((width * height) / 9000);
     for (let i = 0; i < count; i++) {
       const colorRoll = Math.random();
-      let starColor = '#FFFFFF';
+      let starColor = '#C59F60'; // Oro Sagrado
       if (colorRoll < 0.35) {
-        starColor = '#E4C88E'; // Oro Sagrado
+        starColor = '#E4C88E'; // Oro Luminoso
       } else if (colorRoll < 0.65) {
-        starColor = '#F4CAD6'; // Rosa Cuarzo
+        starColor = '#C46C83'; // Rosa Cuarzo
       } else if (colorRoll < 0.85) {
-        starColor = '#8DC4CF'; // Aqua Celestial
+        starColor = '#639FA9'; // Aqua Celestial
       }
       stars.push({
         x: Math.random() * width,
@@ -135,7 +135,7 @@ function initStarCanvas() {
       // Sutil resplandor en estrellas más grandes
       if (star.radius > 1.2) {
         ctx.shadowBlur = 6;
-        ctx.shadowColor = '#ECC8AF';
+        ctx.shadowColor = 'rgba(197, 159, 96, 0.45)';
         ctx.fill();
       }
       ctx.restore();

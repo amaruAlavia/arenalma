@@ -28,11 +28,11 @@
   --gold-deep: #997537;
   --gold-dark: #6E5122;
 
-  /* 4. Portal Cósmico & Noche Estelar */
+  /* 4. Portal Cósmico & Lavanda Celestial */
   --cosmic-lavender: #A898C3;
   --cosmic-purple: #564375;
   --cosmic-deep: #2A1E3C;
-  --cosmic-night: #181124;
+  --cosmic-night: #3A2B4C;
   --cosmic-border: rgba(168, 152, 195, 0.3);
 
   /* 5. Mármol Opalescente & Seda Perlada (Fondos Claros) */
@@ -48,7 +48,7 @@
   --grad-aurora: linear-gradient(135deg, #F4CAD6 0%, #E5A3B5 35%, #C59F60 70%, #639FA9 100%);
   --grad-gold: linear-gradient(135deg, #FBF0D3 0%, #E4C88E 30%, #C59F60 70%, #997537 100%);
   --grad-aqua-rose: linear-gradient(135deg, #639FA9 0%, #8DC4CF 40%, #F4CAD6 80%, #E5A3B5 100%);
-  --grad-portal: radial-gradient(circle at 50% 35%, #4A3563 0%, #2A1E3C 55%, #181124 100%);
+  --grad-portal: radial-gradient(circle at 50% 35%, #F4CAD6 0%, #D9EEF2 55%, #F5EDF1 100%);
   --grad-shimmer: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%);
 
   /* Aliases para compatibilidad total con elementos de marca */
@@ -68,7 +68,7 @@
   --shadow-sm: 0 4px 18px rgba(99, 159, 169, 0.08);
   --shadow-md: 0 10px 30px rgba(229, 163, 181, 0.18);
   --shadow-glow: 0 0 25px rgba(197, 159, 96, 0.35);
-  --shadow-portal: 0 15px 45px rgba(24, 17, 36, 0.25);
+  --shadow-portal: 0 15px 45px rgba(197, 159, 96, 0.18);
 
   /* Bordes & Transiciones */
   --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -281,7 +281,7 @@ h1, h2, h3, h4, h5 {
 .btn-mystic-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 30px rgba(197, 159, 96, 0.6);
-  color: #181124;
+  color: #2A1E3C;
 }
 
 .btn-mystic-primary:hover::before {
@@ -548,9 +548,9 @@ h1, h2, h3, h4, h5 {
   min-width: 44px;
   min-height: 44px;
   border-radius: 50%;
-  background: rgba(24, 17, 36, 0.72);
-  border: 1.5px solid rgba(228, 200, 142, 0.55);
-  color: var(--gold-light);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid var(--gold-sacred);
+  color: var(--gold-deep);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -559,7 +559,7 @@ h1, h2, h3, h4, h5 {
   transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 10px rgba(197, 159, 96, 0.15);
+  box-shadow: 0 4px 18px rgba(197, 159, 96, 0.25), 0 0 10px rgba(229, 163, 181, 0.2);
 }
 
 .hero-singing-bowl-btn .singing-bowl-svg {
@@ -569,17 +569,17 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-singing-bowl-btn .bowl-wave {
-  opacity: 0.35;
+  opacity: 0.5;
   transition: opacity 0.3s ease;
 }
 
 /* Hover místico */
 .hero-singing-bowl-btn:hover {
-  background: rgba(42, 30, 60, 0.85);
-  border-color: var(--gold-shimmer);
-  color: #FFFFFF;
+  background: #FFFFFF;
+  border-color: var(--gold-deep);
+  color: var(--rose-dark);
   transform: scale(1.1);
-  box-shadow: 0 0 22px rgba(228, 200, 142, 0.55), 0 6px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 22px rgba(228, 200, 142, 0.65), 0 6px 20px rgba(197, 159, 96, 0.25);
 }
 
 .hero-singing-bowl-btn:hover .singing-bowl-svg {
@@ -587,14 +587,14 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-singing-bowl-btn:hover .bowl-wave {
-  opacity: 0.8;
+  opacity: 0.95;
 }
 
 /* Estado Activo / Sonando Cuenco Tibetano a 432Hz */
 .hero-singing-bowl-btn.playing {
   background: var(--grad-gold);
-  border-color: #FFFFFF;
-  color: #181124;
+  border-color: var(--gold-deep);
+  color: #2A1E3C;
   box-shadow: 0 0 25px rgba(228, 200, 142, 0.9), 0 0 50px rgba(197, 159, 96, 0.5);
   animation: pulseBowlRing 2.4s infinite ease-in-out;
 }
@@ -648,25 +648,25 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ==========================================================================
-   Hero Section Místico: Templo de la Luz & Portal Cósmico (Fondo Playa & Amuleto)
+   Hero Section Místico: Templo de la Luz & Amanecer Celestial
    ========================================================================== */
 .hero-section {
   position: relative;
   min-height: 92vh;
   display: flex;
   align-items: center;
-  background-color: #181124;
+  background-color: var(--bg-opalescent);
   background-image: 
-    linear-gradient(90deg, 
-      rgba(24, 17, 36, 0.94) 0%, 
-      rgba(35, 25, 48, 0.84) 42%, 
-      rgba(35, 72, 80, 0.52) 75%, 
-      rgba(24, 17, 36, 0.72) 100%),
+    linear-gradient(135deg, 
+      rgba(252, 242, 245, 0.94) 0%, 
+      rgba(244, 202, 214, 0.88) 38%, 
+      rgba(251, 240, 211, 0.82) 72%, 
+      rgba(217, 238, 242, 0.88) 100%),
     url('../img/hero-bg.jpg');
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  color: var(--text-light);
+  color: var(--text-dark);
   overflow: hidden;
   padding: 85px 0;
 }
@@ -679,7 +679,7 @@ h1, h2, h3, h4, h5 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 75% 60%, rgba(229, 163, 181, 0.2) 0%, rgba(99, 159, 169, 0.22) 45%, transparent 75%);
+  background: radial-gradient(circle at 75% 60%, rgba(229, 163, 181, 0.25) 0%, rgba(99, 159, 169, 0.2) 45%, transparent 75%);
   pointer-events: none;
   z-index: 1;
 }
@@ -701,7 +701,7 @@ h1, h2, h3, h4, h5 {
   transform: translateY(-50%);
   width: 740px;
   height: 740px;
-  opacity: 0.16;
+  opacity: 0.22;
   pointer-events: none;
   animation: rotateMandala 90s linear infinite;
   z-index: 1;
@@ -729,44 +729,51 @@ h1, h2, h3, h4, h5 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(99, 159, 169, 0.18);
-  border: 1px solid rgba(141, 196, 207, 0.4);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(229, 163, 181, 0.6);
   padding: 8px 20px;
   border-radius: var(--radius-full);
   font-size: 0.84rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--aqua-light);
+  color: var(--aqua-deep);
   margin-bottom: 24px;
   backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(229, 163, 181, 0.22);
+  font-weight: 600;
 }
 
 .hero-badge i {
-  color: var(--gold-light);
+  color: var(--gold-sacred);
 }
 
 .hero-title {
   font-size: clamp(2.8rem, 5.5vw, 4.4rem);
-  color: #FFFFFF;
+  color: var(--text-dark);
   margin-bottom: 8px;
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .hero-subtitle {
   font-family: var(--font-script);
   font-size: clamp(2.3rem, 4.2vw, 3.4rem);
-  color: var(--rose-light);
+  color: var(--rose-deep);
   line-height: 1.1;
   margin-bottom: 22px;
-  text-shadow: 0 0 20px rgba(244, 202, 214, 0.45);
+  text-shadow: 0 2px 10px rgba(196, 108, 131, 0.25);
 }
 
 .hero-description {
   font-size: 1.12rem;
-  color: rgba(250, 246, 248, 0.88);
+  color: var(--text-muted);
   line-height: 1.82;
   margin-bottom: 34px;
+}
+
+.hero-description strong {
+  color: var(--rose-dark);
+  font-weight: 600;
 }
 
 .hero-actions {
@@ -781,21 +788,26 @@ h1, h2, h3, h4, h5 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(197, 159, 96, 0.25);
+  padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(197, 159, 96, 0.35);
+  box-shadow: 0 8px 24px rgba(229, 163, 181, 0.15);
+  backdrop-filter: blur(10px);
 }
 
 .hero-stat-item h4 {
   font-size: 1.4rem;
-  color: var(--gold-light);
-  font-weight: 600;
+  color: var(--gold-deep);
+  font-weight: 700;
 }
 
 .hero-stat-item p {
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-weight: 600;
 }
 
 /* Tarjeta Visual con el Portal & Halo */
@@ -861,22 +873,22 @@ h1, h2, h3, h4, h5 {
 /* Badges Flotantes */
 .floating-badge {
   position: absolute;
-  background: rgba(42, 30, 60, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(141, 196, 207, 0.4);
+  border: 1px solid rgba(141, 196, 207, 0.5);
   padding: 12px 18px;
   border-radius: var(--radius-md);
-  color: var(--text-light);
+  color: var(--text-dark);
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 25px rgba(229, 163, 181, 0.22);
   z-index: 4;
 }
 
 .floating-badge i {
   font-size: 1.4rem;
-  color: var(--gold-light);
+  color: var(--gold-sacred);
 }
 
 .floating-badge-top {
@@ -993,7 +1005,7 @@ h1, h2, h3, h4, h5 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #181124;
+  background: var(--bg-soft-sand);
 }
 
 .service-img {
@@ -1013,7 +1025,7 @@ h1, h2, h3, h4, h5 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(24, 17, 36, 0.1) 0%, rgba(24, 17, 36, 0.55) 100%);
+  background: linear-gradient(180deg, rgba(250, 246, 248, 0) 40%, rgba(245, 237, 241, 0.65) 100%);
   pointer-events: none;
 }
 
@@ -1037,11 +1049,6 @@ h1, h2, h3, h4, h5 {
   .service-body {
     padding: 24px 20px;
   }
-}
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-grow: 1;
 }
 
 @media (max-width: 640px) {
@@ -1428,13 +1435,13 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ==========================================================================
-   Footer Místico
+   Footer Místico - Seda Perlada & Oro Sagrado
    ========================================================================== */
 .main-footer {
-  background: #181124;
-  color: var(--text-light);
-  padding: 48px 0 22px 0;
-  border-top: 1px solid rgba(197, 159, 96, 0.25);
+  background: linear-gradient(180deg, #FAF6F8 0%, #F5EDF1 60%, #FCF2F5 100%);
+  color: var(--text-dark);
+  padding: 56px 0 24px 0;
+  border-top: 2px solid rgba(197, 159, 96, 0.35);
   position: relative;
 }
 
@@ -1454,7 +1461,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .footer-brand p {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--text-muted);
   font-size: 0.92rem;
   margin: 12px 0 18px 0;
   line-height: 1.6;
@@ -1469,30 +1476,33 @@ h1, h2, h3, h4, h5 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(141, 196, 207, 0.35);
-  color: var(--rose-light);
+  background: #FFFFFF;
+  border: 1px solid rgba(229, 163, 181, 0.5);
+  color: var(--aqua-deep);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
   transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(229, 163, 181, 0.15);
 }
 
 .social-icon:hover {
   background: var(--aqua-primary);
   color: #FFFFFF;
+  border-color: var(--aqua-primary);
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(99, 159, 169, 0.5);
+  box-shadow: 0 6px 16px rgba(99, 159, 169, 0.35);
 }
 
 .footer-col h4 {
-  color: #FFFFFF;
+  color: var(--text-dark);
   font-size: 1.15rem;
   margin-bottom: 16px;
   letter-spacing: 0.8px;
   position: relative;
   display: inline-block;
+  font-weight: 700;
 }
 
 .footer-col h4::after {
@@ -1510,19 +1520,19 @@ h1, h2, h3, h4, h5 {
 }
 
 .footer-links a {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
   font-size: 0.9rem;
   transition: var(--transition);
   cursor: pointer;
 }
 
 .footer-links a:hover {
-  color: var(--rose-light);
+  color: var(--rose-deep);
   padding-left: 6px;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(197, 159, 96, 0.2);
   padding-top: 18px;
   display: flex;
   flex-wrap: wrap;
@@ -1530,17 +1540,17 @@ h1, h2, h3, h4, h5 {
   justify-content: space-between;
   gap: 12px;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--text-muted);
 }
 
 .footer-legal-inline a {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted);
   transition: var(--transition);
   cursor: pointer;
 }
 
 .footer-legal-inline a:hover {
-  color: var(--rose-light);
+  color: var(--rose-deep);
   text-decoration: underline;
 }
 
@@ -1553,7 +1563,7 @@ h1, h2, h3, h4, h5 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(24, 17, 36, 0.78);
+  background: rgba(43, 33, 41, 0.45);
   backdrop-filter: blur(8px);
   z-index: 1050;
   display: flex;
@@ -1578,7 +1588,7 @@ h1, h2, h3, h4, h5 {
   max-height: 85vh;
   border-radius: var(--radius-lg);
   border: 1.5px solid var(--rose-primary);
-  box-shadow: 0 25px 60px rgba(24, 17, 36, 0.45);
+  box-shadow: 0 25px 60px rgba(197, 159, 96, 0.25);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1710,7 +1720,7 @@ h1, h2, h3, h4, h5 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(24, 17, 36, 0.6);
+  background: rgba(43, 33, 41, 0.45);
   backdrop-filter: blur(5px);
   z-index: 1000;
   opacity: 0;
@@ -1732,7 +1742,7 @@ h1, h2, h3, h4, h5 {
   height: 100%;
   background: #FFFFFF;
   z-index: 1001;
-  box-shadow: -10px 0 35px rgba(24, 17, 36, 0.25);
+  box-shadow: -10px 0 35px rgba(197, 159, 96, 0.2);
   transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
@@ -1790,7 +1800,7 @@ h1, h2, h3, h4, h5 {
   display: flex;
   gap: 14px;
   padding: 14px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(229, 163, 181, 0.25);
 }
 
 .cart-item-img {
@@ -1859,12 +1869,12 @@ h1, h2, h3, h4, h5 {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background: #181124;
-  color: #FFFFFF;
-  border: 1px solid var(--gold-light);
+  background: #FFFFFF;
+  color: var(--text-dark);
+  border: 1.5px solid var(--gold-sacred);
   padding: 14px 22px;
   border-radius: var(--radius-md);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(197, 159, 96, 0.25);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1919,7 +1929,7 @@ h1, h2, h3, h4, h5 {
   background: #FFFFFF;
   padding: 8px 16px;
   border-radius: var(--radius-full);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 20px rgba(197, 159, 96, 0.18);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-dark);
@@ -1939,9 +1949,9 @@ h1, h2, h3, h4, h5 {
   .hero-section {
     background-image: 
       linear-gradient(180deg, 
-        rgba(24, 17, 36, 0.94) 0%, 
-        rgba(35, 25, 48, 0.86) 55%, 
-        rgba(35, 72, 80, 0.68) 100%),
+        rgba(252, 242, 245, 0.95) 0%, 
+        rgba(244, 202, 214, 0.9) 45%, 
+        rgba(217, 238, 242, 0.92) 100%),
       url('../img/hero-bg.jpg');
     background-position: center bottom;
   }
@@ -1979,7 +1989,7 @@ h1, h2, h3, h4, h5 {
     padding: 40px 24px;
     gap: 22px;
     transition: left 0.4s ease;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(229, 163, 181, 0.2);
   }
   .nav-menu.active {
     left: 0;
