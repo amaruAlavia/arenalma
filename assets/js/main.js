@@ -498,31 +498,33 @@ function initLegalModals() {
   const legalTriggers = document.querySelectorAll('.open-legal-modal');
 
   const legalContent = {
-    'aviso-legal': {
-      title: 'Aviso Legal & Términos del Servicio',
+    'terminos': {
+      title: 'Términos y Condiciones del Servicio',
       body: `
         <h4>1. Identificación de la Titular y Actividad</h4>
         <p>En cumplimiento con la legislación chilena (Ley N° 19.496 de Protección de los Derechos de los Consumidores y el Reglamento de Comercio Electrónico, Decreto 31 del Ministerio de Economía), se informa que este sitio web es administrado bajo la marca <strong>Arenalma — "Reconecta con tu esencia"</strong>, con operaciones en la conurbación de <strong>La Serena y Coquimbo, Región de Coquimbo, Chile</strong>.</p>
         <p>Canal oficial de contacto y atención directa: <strong>WhatsApp (+56 9 1234 5678)</strong> y canales vinculados en este sitio.</p>
 
-        <h4>2. Naturaleza de los Servicios Holísticos</h4>
+        <h4>2. Naturaleza de los Servicios Holísticos y Descargo de Salud</h4>
         <p>Arenalma ofrece servicios de bienestar complementario y holístico: <em>Reiki Usui Tradicional, Lectura Terapéutica de Oráculos, Angeloterapia</em> y confección artesanal de <em>Amuletos en Hilo Encerado con Cristales Naturales</em>.</p>
         
         <div class="legal-alert-box">
           <strong>Aviso de Salud (Decreto Supremo N° 42 del MINSAL):</strong><br>
-          Las terapias y sesiones energéticas ofrecidas son de carácter holístico, espiritual y complementario. En ningún caso constituyen diagnóstico, consulta, tratamiento médico formal, farmacológico ni psiquiátrico. La persona consultante es libre y responsable en todo momento de su proceso de salud integral.
+          1. El <strong>Reiki Usui Tradicional</strong>, la <strong>Angeloterapia</strong> y la <strong>Lectura de Oráculos Terapéuticos</strong> son prácticas complementarias orientadas a la armonización energética, reducción del estrés, bienestar emocional y crecimiento personal.<br><br>
+          2. Estas sesiones <strong>NO sustituyen</strong> la consulta médica, el diagnóstico clínico, los tratamientos farmacológicos ni el acompañamiento psiquiátrico o psicológico impartido por profesionales de la salud debidamente acreditados por la Superintendencia de Salud.<br><br>
+          3. La persona consultante es libre y responsable en todo momento de su proceso de salud integral. En Arenalma promovemos siempre la continuidad de los tratamientos médicos prescritos.
         </div>
 
-        <h4>3. Propiedad Intelectual</h4>
-        <p>Todos los elementos de este sitio web, incluidos el logotipo de Arenalma, mandalas, diseños de amuletos tejidos a mano, textos, fotografías y código fuente, están protegidos por la Ley N° 17.336 de Propiedad Intelectual de Chile. Queda prohibida su reproducción o uso no autorizado.</p>
+        <h4>3. Agendamiento de Sesiones y Envíos de Amuletos</h4>
+        <p>Las reservas de sesiones se coordinan de forma personalizada por WhatsApp. Los amuletos se tejen a mano por la artesana con hilo encerado resistente y piedras naturales seleccionadas; las entregas presenciales se realizan en La Serena / Coquimbo y los envíos a todo Chile se efectúan mediante empresas de encomienda previamente coordinadas con la persona compradora.</p>
 
-        <h4>4. Agendamiento de Sesiones y Envíos de Amuletos</h4>
-        <p>Las reservas de sesiones se coordinan de forma personalizada por WhatsApp. Los amuletos se tejen a mano por la creadora con hilo encerado resistente y piedras naturales seleccionadas; las entregas presenciales se realizan en La Serena / Coquimbo y los envíos a todo Chile se efectúan mediante empresas de encomienda previamente coordinadas con la persona compradora.</p>
+        <h4>4. Propiedad Intelectual</h4>
+        <p>Todos los elementos de este sitio web, incluidos el logotipo de Arenalma, mandalas, diseños de amuletos tejidos a mano, textos, fotografías y código fuente, están protegidos por la Ley N° 17.336 de Propiedad Intelectual de Chile. Queda prohibida su reproducción o uso no autorizado.</p>
       `
     },
 
-    'politica-privacidad': {
-      title: 'Política de Privacidad y Protección de Datos',
+    'privacidad': {
+      title: 'Política de Privacidad y Cookies',
       body: `
         <h4>1. Compromiso de Privacidad (Ley N° 19.628 de Chile)</h4>
         <p>En Arenalma respetamos profundamente tu intimidad y protegemos tus datos personales conforme a la <strong>Ley N° 19.628 sobre Protección de la Vida Privada</strong> y los estándares de seguridad de datos en Chile.</p>
@@ -535,53 +537,22 @@ function initLegalModals() {
           <li><strong>Fecha de nacimiento o intención:</strong> únicamente cuando solicitas un amuleto personalizado co-creado con tu energía.</li>
         </ul>
 
-        <h4>3. Confidencialidad Absoluta</h4>
-        <p>Toda conversación, canalización, lectura de oráculo o motivo de consulta terapéutica se mantiene bajo estricto secreto y confidencialidad ética. <strong>Jamás vendemos, compartimos ni cedemos tus datos a terceros ni a empresas de publicidad.</strong></p>
+        <h4>3. Confidencialidad Absoluta y Derechos ARCO</h4>
+        <p>Toda conversación, canalización, lectura de oráculo o motivo de consulta terapéutica se mantiene bajo estricto secreto y confidencialidad ética. <strong>Jamás vendemos, compartimos ni cedemos tus datos a terceros ni a empresas de publicidad.</strong> En cualquier momento puedes solicitar la actualización o eliminación definitiva de tu información escribiéndonos por WhatsApp.</p>
 
-        <h4>4. Derechos ARCO (Acceso, Rectificación, Cancelación y Oposición)</h4>
-        <p>En cualquier momento puedes solicitar la actualización o eliminación definitiva de tu información de contacto escribiéndonos directamente a nuestro canal de WhatsApp.</p>
-      `
-    },
-
-    'politica-cookies': {
-      title: 'Política de Cookies y Almacenamiento Local',
-      body: `
-        <h4>1. ¿Qué son las Cookies y Almacenamiento Web?</h4>
-        <p>Las cookies y el almacenamiento local (<em>localStorage</em>) son pequeños ficheros que los sitios web guardan en tu navegador para permitir funciones técnicas y mejorar tu experiencia de navegación.</p>
-
-        <h4>2. Tecnologías Empleadas en Arenalma</h4>
-        <p>En Arenalma mantenemos un sitio web consciente, ligero y respetuoso de tu tranquilidad digital. <strong>No utilizamos cookies invasivas de seguimiento publicitario ni vendemos perfiles de usuario.</strong></p>
-        <p>Únicamente empleamos tecnologías estrictamente técnicas y funcionales:</p>
+        <h4>4. Uso de Cookies y Almacenamiento Local</h4>
+        <p>En Arenalma mantenemos un sitio web consciente, ligero y respetuoso de tu tranquilidad digital. <strong>No utilizamos cookies invasivas de seguimiento publicitario ni perfiles comerciales.</strong></p>
+        <p>Únicamente empleamos almacenamiento estrictamente técnico y funcional:</p>
         <ul>
-          <li><strong>Almacenamiento funcional de audio:</strong> recuerda si activaste o pausaste la música ambiental del cuenco tibetano a 432Hz para mantener tu preferencia durante la visita.</li>
-          <li><strong>Almacenamiento de sesión:</strong> permite que los filtros del catálogo de amuletos y el menú responsivo operen de forma fluida.</li>
+          <li><strong>Preferencia de audio ambiental:</strong> recuerda si activaste o pausaste el cuenco tibetano a 432Hz durante tu visita.</li>
+          <li><strong>Almacenamiento de sesión:</strong> permite que los filtros del catálogo de amuletos y el menú operen con total fluidez.</li>
         </ul>
-
-        <h4>3. Cómo Desactivar o Gestionar tus Preferencias</h4>
-        <p>Puedes configurar o borrar las cookies y datos locales en cualquier momento desde las opciones de configuración y privacidad de tu navegador web (Google Chrome, Safari, Firefox, Edge, etc.).</p>
-      `
-    },
-
-    'descargo-medico': {
-      title: 'Descargo de Responsabilidad Terapéutica (MINSAL)',
-      body: `
-        <h4>Marco Regulatorio de Salud en Chile</h4>
-        <p>En conformidad con las directrices de salud pública de la República de Chile y el <strong>Decreto Supremo N° 42 del Ministerio de Salud (MINSAL)</strong> sobre terapias médicas complementarias:</p>
-
-        <div class="legal-alert-box">
-          <strong>Declaración de Transparencia y Conciencia:</strong><br>
-          1. El <strong>Reiki Usui Tradicional</strong>, la <strong>Angeloterapia</strong> y la <strong>Lectura de Oráculos Terapéuticos</strong> son prácticas complementarias orientadas a la armonización energética, reducción del estrés, bienestar emocional y crecimiento personal.<br><br>
-          2. Estas sesiones <strong>NO sustituyen</strong> la consulta médica, el diagnóstico clínico, los tratamientos farmacológicos ni el acompañamiento psiquiátrico o psicológico impartido por profesionales de la salud debidamente acreditados por la Superintendencia de Salud.<br><br>
-          3. En Arenalma promovemos siempre la consulta y continuidad de los tratamientos médicos tradicionales prescritos para cada persona.
-        </div>
-
-        <h4>Acompañamiento Amoroso y Ético</h4>
-        <p>Nuestra labor se fundamenta en la calidez, la empatía y la conexión espiritual para ayudarte a reconectar con tu paz interior y sabiduría innata, complementando armónicamente tu cuidado de salud integral.</p>
+        <p>Puedes configurar o borrar las cookies y datos locales en cualquier momento desde la configuración de tu navegador.</p>
       `
     },
 
     'faq': {
-      title: 'Preguntas Frecuentes (FAQ)',
+      title: 'FAQ — Preguntas Frecuentes',
       body: `
         <div style="display:flex; flex-direction:column; gap:1.25rem;">
           <div>
@@ -612,6 +583,12 @@ function initLegalModals() {
       `
     }
   };
+
+  // Alias para retrocompatibilidad
+  legalContent['aviso-legal'] = legalContent['terminos'];
+  legalContent['descargo-medico'] = legalContent['terminos'];
+  legalContent['politica-privacidad'] = legalContent['privacidad'];
+  legalContent['politica-cookies'] = legalContent['privacidad'];
 
   function openModal(type) {
     const data = legalContent[type] || legalContent['aviso-legal'];
